@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { AppContext } from '../context/AppContext';
+import { useSelector } from 'react-redux';
+import { selectSelectedUser } from '../redux/slices/usersSlice';
 
 const UserProfile = () => {
-    // Отримуємо дані з контексту
-    const { selectedUser } = useContext(AppContext);
+    // Отримуємо обраного користувача зі store
+    const selectedUser = useSelector(selectSelectedUser);
 
     return (
         <div className="user-profile">
